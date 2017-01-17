@@ -25,41 +25,41 @@
 #include "usart3.h"
 // hello
 //#include "timer7.h"
-
-// ALIENTEK 探索者STM32F407开发板
-// LWIP LWIP综合实验
-//技术支持：www.openedv.com
-//广州市星翼电子科技有限公司
+////////
+// ALIENTEK 探锟斤拷锟斤拷STM32F407锟斤拷锟斤拷锟斤拷
+// LWIP LWIP锟桔猴拷实锟斤拷
+//锟斤拷锟斤拷支锟街ｏ拷www.openedv.com
+//锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟接科硷拷锟斤拷锟睫癸拷司
 extern u8 DS18B20_Init(void);
-extern void Adc_Temperate_Init(void); //声明内部温度传感器初始化函数
+extern void Adc_Temperate_Init(void); //锟斤拷锟斤拷锟节诧拷锟铰度达拷锟斤拷锟斤拷锟斤拷始锟斤拷锟斤拷锟斤拷
 
 // u16 USART_RX_STA=0;
-//加载UI
+//锟斤拷锟斤拷UI
 // mode:
-// bit0:0,不加载;1,加载前半部分UI
-// bit1:0,不加载;1,加载后半部分UI
+// bit0:0,锟斤拷锟斤拷锟斤拷;1,锟斤拷锟斤拷前锟诫部锟斤拷UI
+// bit1:0,锟斤拷锟斤拷锟斤拷;1,锟斤拷锟截猴拷锟诫部锟斤拷UI
 void lwip_test_ui(u8 mode) {
   u8 speed;
   u8 buf[30];
   POINT_COLOR = RED;
   if (mode & 1 << 0) {
-    LCD_Fill(30, 30, lcddev.width, 110, WHITE); //清除显示
+    LCD_Fill(30, 30, lcddev.width, 110, WHITE); //锟斤拷锟斤拷锟斤拷示
     LCD_ShowString(30, 30, 200, 16, 16, "Explorer STM32F4");
     LCD_ShowString(30, 50, 200, 16, 16, "LWIP Webserver Test");
     LCD_ShowString(30, 70, 200, 16, 16, "ATOM@ALIENTEK");
     LCD_ShowString(30, 90, 200, 16, 16, "2014/8/15");
   }
   if (mode & 1 << 1) {
-    LCD_Fill(30, 110, lcddev.width, lcddev.height, WHITE); //清除显示
+    LCD_Fill(30, 110, lcddev.width, lcddev.height, WHITE); //锟斤拷锟斤拷锟斤拷示
     LCD_ShowString(30, 110, 200, 16, 16, "lwIP Init Successed");
     if (lwipdev.dhcpstatus == 2)
       sprintf((char *)buf, "DHCP IP:%d.%d.%d.%d", lwipdev.ip[0], lwipdev.ip[1],
-              lwipdev.ip[2], lwipdev.ip[3]); //打印动态IP地址
+              lwipdev.ip[2], lwipdev.ip[3]); //锟斤拷印锟斤拷态IP锟斤拷址
     else
       sprintf((char *)buf, "Static IP:%d.%d.%d.%d", lwipdev.ip[0],
-              lwipdev.ip[1], lwipdev.ip[2], lwipdev.ip[3]); //打印静态IP地址
+              lwipdev.ip[1], lwipdev.ip[2], lwipdev.ip[3]); //锟斤拷印锟斤拷态IP锟斤拷址
     LCD_ShowString(30, 130, 210, 16, 16, buf);
-    speed = LAN8720_Get_Speed(); //得到网速
+    speed = LAN8720_Get_Speed(); //锟矫碉拷锟斤拷锟斤拷
     if (speed & 1 << 1)
       LCD_ShowString(30, 150, 200, 16, 16, "Ethernet Speed:100M");
     else
@@ -70,51 +70,51 @@ void lwip_test_ui(u8 mode) {
 int main(void) {
   u32 i;
   delay_init(168);
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //中断分组配置
-                                                  //延时初始化
-  uart_init(9600);                                //串口波特率设置
+  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //锟叫断凤拷锟斤拷锟斤拷锟斤拷
+                                                  //锟斤拷时锟斤拷始锟斤拷
+  uart_init(9600); //锟斤拷锟节诧拷锟斤拷锟斤拷锟斤拷锟斤拷
   usart3_init(115200);
-  // usmart_dev.init(84); 	                        //初始化USMART
-  LED_Init(); // LED初始化
+  // usmart_dev.init(84); 	                        //锟斤拷始锟斤拷USMART
+  LED_Init(); // LED锟斤拷始锟斤拷
 
-  KEY_Init();       //按键初始化
-  LCD_Init();       // LCD初始化
-  BEEP_Init();      //蜂鸣器初始化
-  RTC_Timer_Init(); // RTC初始化
-  Adc_Init();       // ADC1_CH5初始化
+  KEY_Init();       //锟斤拷锟斤拷锟斤拷始锟斤拷
+  LCD_Init();       // LCD锟斤拷始锟斤拷
+  BEEP_Init();      //锟斤拷锟斤拷锟斤拷锟斤拷始锟斤拷
+  RTC_Timer_Init(); // RTC锟斤拷始锟斤拷
+  Adc_Init();       // ADC1_CH5锟斤拷始锟斤拷
   DS18B20_Init();
-  Adc_Temperate_Init(); //内部温度传感器初始化
-  FSMC_SRAM_Init();     //初始化外部SRAM
+  Adc_Temperate_Init(); //锟节诧拷锟铰度达拷锟斤拷锟斤拷锟斤拷始锟斤拷
+  FSMC_SRAM_Init();     //锟斤拷始锟斤拷锟解部SRAM
   DHT11_Init();
   EXTIX_Init();
-  mymem_init(SRAMIN);  //初始化内部内存池
-  mymem_init(SRAMEX);  //初始化外部内存池
-  mymem_init(SRAMCCM); //初始化CCM内存池
+  mymem_init(SRAMIN);  //锟斤拷始锟斤拷锟节诧拷锟节达拷锟斤拷
+  mymem_init(SRAMEX);  //锟斤拷始锟斤拷锟解部锟节达拷锟斤拷
+  mymem_init(SRAMCCM); //锟斤拷始锟斤拷CCM锟节达拷锟斤拷
   MOTO_GPIO_Config();
-  POINT_COLOR = RED;       //红色字体
-  lwip_test_ui(1);         //加载前半部分UI
-  TIM3_Int_Init(999, 839); // 100khz的频率,计数1000为10ms
+  POINT_COLOR = RED;       //锟斤拷色锟斤拷锟斤拷
+  lwip_test_ui(1);         //锟斤拷锟斤拷前锟诫部锟斤拷UI
+  TIM3_Int_Init(999, 839); // 100khz锟斤拷频锟斤拷,锟斤拷锟斤拷1000为10ms
   // TIM7_Int_Init(1000-1,8400-1);
   CAR_STOP();
 
-  while (lwip_comm_init()) // lwip初始化
+  while (lwip_comm_init()) // lwip锟斤拷始锟斤拷
   {
     LCD_ShowString(30, 150, 200, 20, 16, "LWIP Init Falied!");
     delay_ms(1200);
-    LCD_Fill(30, 110, 230, 130, WHITE); //清除显示
+    LCD_Fill(30, 110, 230, 130, WHITE); //锟斤拷锟斤拷锟斤拷示
     LCD_ShowString(30, 110, 200, 16, 16, "Retrying...");
   }
   LCD_ShowString(30, 110, 200, 20, 16, "LWIP Init Success!");
-  LCD_ShowString(30, 130, 200, 16, 16, "DHCP IP configing..."); //等待DHCP获取
+  LCD_ShowString(30, 130, 200, 16, 16, "DHCP IP configing..."); //锟饺达拷DHCP锟斤拷取
 #if LWIP_DHCP
   while ((lwipdev.dhcpstatus != 2) &&
-         (lwipdev.dhcpstatus != 0XFF)) //等待DHCP获取成功/超时溢出
+         (lwipdev.dhcpstatus != 0XFF)) //锟饺达拷DHCP锟斤拷取锟缴癸拷/锟斤拷时锟斤拷锟斤拷
   {
     lwip_periodic_handle();
   }
 #endif
-  lwip_test_ui(2); //加载后半部分UI
-  delay_ms(500);   //延时1s
+  lwip_test_ui(2); //锟斤拷锟截猴拷锟诫部锟斤拷UI
+  delay_ms(500);   //锟斤拷时1s
   delay_ms(500);
   httpd_init(); // Web Server模式
   while (1) {
