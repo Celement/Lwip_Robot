@@ -24,7 +24,7 @@
 #include "exti.h"
 #include "usart3.h"
 //#include "timer7.h"
-
+//大家好 jjjjjjjjjjjjjjjjjjjj
 //ALIENTEK 探索者STM32F407开发板
 //LWIP LWIP综合实验
 //技术支持：www.openedv.com
