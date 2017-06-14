@@ -49,6 +49,7 @@
 /** @addtogroup stm32f4xx
   * @{
   */
+//hello   java1
     
 #ifndef __STM32F4xx_H
 #define __STM32F4xx_H
