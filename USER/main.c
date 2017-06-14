@@ -24,7 +24,7 @@
 #include "exti.h"
 #include "usart3.h"
 //#include "timer7.h"
-//cjk到此一游！！！！！！！！
+//cjk到此一游！！！！！！！！1234567890：：：
 //大家好 jjjjjjjjjjjjjjjjjjjj
 //ALIENTEK 探索者STM32F407开发板
 //这是新的技术
