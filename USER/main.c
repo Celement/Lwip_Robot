@@ -35,6 +35,9 @@ extern void Adc_Temperate_Init(void);	//声明内部温度传感器初始化函数
 
 //u16 USART_RX_STA=0; 
 //加载UI
+//	没有过不去的事情，只有过不去的心情
+//	只要把心情变一变，世界完全不一样了
+
 //mode:
 //bit0:0,不加载;1,加载前半部分UI
 //bit1:0,不加载;1,加载后半部分UI
