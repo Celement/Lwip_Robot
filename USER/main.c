@@ -26,6 +26,7 @@
 //#include "timer7.h"
 //大家好 jjjjjjjjjjjjjjjjjjjj
 //ALIENTEK 探索者STM32F407开发板
+//这是新的技术
 //LWIP LWIP综合实验
 //技术支持：www.openedv.com
 //广州市星翼电子科技有限公司
