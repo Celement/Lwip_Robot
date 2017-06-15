@@ -24,6 +24,7 @@
 #include "exti.h"
 #include "usart3.h"
 //#include "timer7.h"
+//2017/6/15  21:25
 //2017/6/14 cjk到此一游！！！！！！！！1234567890：：：2017/6/15****
 //大家好 jjjjjjjjjjjjjjjjjjjj
 //ALIENTEK 探索者STM32F407开发板
